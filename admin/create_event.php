@@ -30,10 +30,10 @@ if (!isset($_SESSION['admin_username'])) {
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             include '../db.php';
-            $title = $_POST["title"];
-            $description = $_POST["description"];
-            $date = $_POST["date"];
-            $location = $_POST["location"];
+            $title = mysqli_real_escape_string($conn, $_POST["title"]);
+            $description = mysqli_real_escape_string($conn, $_POST["description"]);
+            $date = mysqli_real_escape_string($conn, $_POST["date"]);
+            $location = mysqli_real_escape_string($conn, $_POST["location"]);
 
             $sql = "INSERT INTO events (title, description, date, location) VALUES ('$title', '$description', '$date', '$location')";
 

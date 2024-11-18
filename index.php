@@ -41,6 +41,8 @@ session_start();
             ?>
         </div>
         <a href="user/registered_events.php" class="register-button">Show Registered Events</a>
+        <br />
+        <br />
     </main>
     <?php include 'footer.php'; ?>
 </body>

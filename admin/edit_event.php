@@ -20,10 +20,10 @@ if (!isset($_SESSION['admin_username'])) {
         include '../db.php';
         $event_id = $_GET['id'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $title = $_POST["title"];
-            $description = $_POST["description"];
-            $date = $_POST["date"];
-            $location = $_POST["location"];
+            $title = mysqli_real_escape_string($conn, $_POST["title"]);
+            $description = mysqli_real_escape_string($conn, $_POST["description"]);
+            $date = mysqli_real_escape_string($conn, $_POST["date"]);
+            $location = mysqli_real_escape_string($conn, $_POST["location"]);
 
             $sql = "UPDATE events SET title='$title', description='$description', date='$date', location='$location' WHERE id=$event_id";
 

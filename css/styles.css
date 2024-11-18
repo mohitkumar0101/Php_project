@@ -5,7 +5,7 @@ body {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    min-height: 100vh;
 }
 
 /* Navbar Styling */
@@ -63,6 +63,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    flex: 1; /* Ensure main content takes up available space */
 }
 
 /* Headings */
@@ -193,19 +194,15 @@ div {
 }
 
 /* Footer Styling */
-footer {
+.footer {
     width: 100%;
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
-
-footer .logo {
+.footer .logo {
     height: 40px;
     position: relative;
 }
